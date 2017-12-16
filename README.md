@@ -1,5 +1,7 @@
 # Alexa Skill for New Zealand Earthquakes
 
+[![Build Status](https://travis-ci.org/chillu/alexa-skill-kiwi-quakes.svg?branch=master)](https://travis-ci.org/chillu/alexa-skill-kiwi-quakes)
+
 New Zealanders often ask themselves: Was that an earthquake,
 a truck going past, or just the wind? Now you can ask Alexa!
 
