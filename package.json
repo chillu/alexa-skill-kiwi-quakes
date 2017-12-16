@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Alexa Skill for New Zealand Earthquakes",
   "scripts": {
+    "lint": "prettier --write src/**/*.js test/**/*.js",
     "test": "mocha",
     "deploy": "ask deploy && serverless deploy"
   },
