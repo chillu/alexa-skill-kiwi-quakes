@@ -22,7 +22,7 @@ module.exports = function(quakesPromise, currDate) {
     const { time, locality, mmi } = quake.properties;
 
     const hasQuake =
-      differenceInHours(new Date(time), currDate) <= defaultHoursAgo;
+      differenceInHours(new Date(time), currDate) >= -1 * defaultHoursAgo;
 
     if (!hasQuake) {
       return {
