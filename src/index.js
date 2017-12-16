@@ -12,17 +12,14 @@ exports.handler = function(event, context) {
 
 const handlers = {
   LaunchRequest: function() {
-    this.emit("SayHello");
-  },
-  SayHello: function() {
-    this.response
-      .speak("Hello World!")
-      .cardRenderer("hello world", "hello world");
+    this.response.speak(
+      "You can try: 'alexa, ask kiwi quakes if this was an earthquake'"
+    );
     this.emit(":responseReady");
   },
   FindQuakeIntent: function() {
-    findQuake(Geonet.quakes).then(msg => {
-      this.response.speak(msg);
+    findQuake(Geonet.quakes()).then(res => {
+      this.response.speak(res.message);
       this.emit(":responseReady");
     });
   },
