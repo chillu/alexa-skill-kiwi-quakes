@@ -4,13 +4,13 @@ const distanceInWords = require("date-fns/distance_in_words");
 // Config
 const defaultHoursAgo = 6;
 
-module.exports = function(quakesPromise, currDate) {
+module.exports = function(quakesFn, currDate) {
   if (!currDate) {
     currDate = new Date();
   }
 
   // Can't use async/await in NodeJS 6 on Lambda, sigh...
-  return quakesPromise.then(quakes => {
+  return quakesFn().then(quakes => {
     const quake = quakes.features[0];
     const { time, locality, mmi } = quake.properties;
 

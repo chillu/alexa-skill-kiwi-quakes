@@ -4,11 +4,10 @@
       "locales": {
         "en-US": {
           "summary": "Earth quake info for New Zealanders",
-          "examplePhrases": [
-            "Alexa ask kiwi quakes if that was an earthquake"
-          ],
+          "examplePhrases": ["Alexa ask kiwi quakes if that was an earthquake"],
           "name": "kiwiquakes",
-          "description": "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! Data provided by geonet.org.nz"
+          "description":
+            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! Data provided by geonet.org.nz"
         }
       },
       "isAvailableWorldwide": true,
@@ -19,7 +18,7 @@
     "apis": {
       "custom": {
         "endpoint": {
-          "sourceDir": "lambda/custom"
+          "sourceDir": "src"
         }
       }
     },
