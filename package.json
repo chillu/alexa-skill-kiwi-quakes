@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Alexa Skill for New Zealand Earthquakes",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "deploy": "ask deploy && serverless deploy"
   },
   "dependencies": {
     "alexa-sdk": "^1.0.0",
@@ -11,9 +12,13 @@
     "node-fetch": "^1.7.3"
   },
   "devDependencies": {
+    "ask-cli": "^1.0.0-beta.8",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "prettier": "^1.9.2",
-    "sinon": "^4.1.3"
+    "serverless": "^1.24.1",
+    "serverless-webpack": "^4.1.0",
+    "sinon": "^4.1.3",
+    "webpack": "^3.10.0"
   }
 }

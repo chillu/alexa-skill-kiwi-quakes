@@ -8,7 +8,7 @@
           "apis": {
             "custom": {
               "endpoint": {
-                "uri": "ask-custom-kiwiquakes-kiwiquakes"
+                "uri": "alexa-skill-kiwiquakes-prod-skill"
               }
             }
           }

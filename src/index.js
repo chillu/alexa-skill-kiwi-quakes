@@ -1,8 +1,8 @@
 "use strict";
 
 const Alexa = require("alexa-sdk");
-const Geonet = require("lib/geonet");
-const findQuake = require("intents/find-quake");
+const Geonet = require("./lib/geonet");
+const findQuake = require("./intents/find-quake");
 
 exports.handler = function(event, context) {
   const alexa = Alexa.handler(event, context);
@@ -22,8 +22,8 @@ const handlers = {
   },
   FindQuakeIntent: function() {
     findQuake(Geonet.quakes).then(msg => {
-      alexa.response.speak(msg);
-      alexa.emit(":responseReady");
+      this.response.speak(msg);
+      this.emit(":responseReady");
     });
   },
   SessionEndedRequest: function() {
