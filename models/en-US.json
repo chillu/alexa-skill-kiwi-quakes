@@ -19,10 +19,19 @@
         {
           "name": "FindQuakeIntent",
           "samples": [
+            "check if there was an earthquake",
+            "check if there was a quake",
+            "check if that was an earthquake",
+            "check if that was a quake",
             "was this an earthquake",
+            "was this a quake",
             "was there an earthquake",
+            "was there a quake",
             "if this was an earthquake",
+            "if this was a quake",
+            "is this an earthquake",
             "is this a quake",
+            "did we have an earthquake",
             "did we have a quake"
           ]
         }
