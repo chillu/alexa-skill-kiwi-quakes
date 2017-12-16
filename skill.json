@@ -11,9 +11,10 @@
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
+      "testingInstructions":
+        "Should come up with the latest quake (magnitude 3 or higher) from http://www.geonet.org.nz/earthquake/light. The underlying data (https://api.geonet.org.nz/) is in the public domain, and used according to the data policy outlined at http://www.geonet.org.nz/policy.",
       "category": "EDUCATION_AND_REFERENCE",
-      "distributionCountries": []
+      "distributionCountries": ["NZ"]
     },
     "apis": {
       "custom": {
