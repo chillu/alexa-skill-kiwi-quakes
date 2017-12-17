@@ -7,6 +7,9 @@ provider:
   region: us-east-1
   memorySize: 256
   cfLogs: true
+  profile: kiwiquakes
+  environment:
+    GOOGLE_API_KEY: ${file(config.json):GOOGLE_API_KEY}
 
 functions:
   skill: # function name
@@ -14,6 +17,22 @@ functions:
     description: Alexa Skill for New Zealand Earthquakes
     events:
       - alexaSkill # function trigger. for alexa skills it 'alexaSkill'
+
+resources:
+  Resources:
+    usersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: usersTable
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
 
 plugins:
   - serverless-webpack

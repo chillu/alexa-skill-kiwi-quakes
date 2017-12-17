@@ -30,14 +30,21 @@ npm install
 ```
 
 The project is hard-wired to a certain AWS stack (see `.ask/config`).
-You'll need to use [ask clone](https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html#clone-command) to create your own version.
+You'll need to use [ask clone](https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html#clone-command)
+to create your own version.
+
+Now copy `config.default.json` to `config.json` and set your
+[Google API key](https://developers.google.com/maps/documentation/geocoding/get-api-key)
+(required for geocoding lookups);
 
 ## Usage
 
 Full deploy (AWS skills, models and lambda function)
 
 ```
-npm run deploy
+npm run ask -- deploy --target model
+npm run ask -- deploy --target skill
+npm run serverless -- deploy
 ```
 
 ## Testing

@@ -5,12 +5,12 @@ const defaultHeaders = {
   "Accept-Version": "application/vnd.geo+json;version=2"
 };
 
-function quakes(mmi = 3) {
+function getQuakes(mmi = 3) {
   return fetch(`${baseUrl}/quake?MMI=${mmi}`, { headers: defaultHeaders }).then(
     res => res.json()
   );
 }
 
 module.exports = {
-  quakes
+  getQuakes
 };

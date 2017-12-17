@@ -34,6 +34,23 @@
             "did we have an earthquake",
             "did we have a quake"
           ]
+        },
+        {
+          "name": "SetLocationIntent",
+          "slots": [
+            {
+              "name": "Location",
+              "type": "AMAZON.LITERAL"
+            }
+          ],
+          "samples": [
+            "set my location to {Wellington|Location}",
+            "set my location as {Wellington|Location}",
+            "set location to {Wellington|Location}",
+            "set location as {Wellington|Location}",
+            "set my address to {Wellington|Location}",
+            "set my city to {Wellington|Location}"
+          ]
         }
       ]
     }
