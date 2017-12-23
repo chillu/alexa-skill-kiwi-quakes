@@ -38,34 +38,33 @@ const handlers = {
     console.log("GOOGLE_API_KEY", process.env.GOOGLE_API_KEY);
 
     // Value not filled
-    if (!slots.Location.value) {
+    if (!slots.City.value) {
       const speechOutput =
-        "What's your location? Use your neighbourhood and city for best results";
+        "What's your location? Use your city for best results";
       const repromptSpeech = speechOutput;
-      return this.emit(":elicitSlot", "Location", speechOutput, repromptSpeech);
+      return this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
     }
 
     geocoder
-      .geocode({ address: slots.Location.value, country: "New Zealand" })
-      .then(res => {
-        console.log("res", res);
-        const { latitude, longitude } = res;
+      .geocode({ address: slots.City.value, country: "New Zealand" })
+      .then(results => {
+        console.log("results", results);
+        // TODO Handle no places found
+
+        const result = results[0];
+        const { latitude, longitude, formattedAddress } = result;
         this.attributes.latLng = { latitude, longitude };
 
         // Slot value is not confirmed
-        const speechOutput = `Setting your location to ${
-          res.formattedAddress
-        }. Is that correct?`;
-        const repromptSpeech = speechOutput;
-        this.emit(":confirmSlot", "Location", speechOutput, repromptSpeech);
-        return this.emit(":responseReady");
+        this.response.speak(`Setting your location to ${formattedAddress}`);
+        this.emit(":responseReady");
       })
       .catch(() => {
         // TODO Handle generic error (e.g. API limits)
         const speechOutput =
-          "Sorry, I couldn't find a location. Use your neighbourhood and city for best results";
+          "Sorry, I couldn't find a location. Use your city for best results";
         const repromptSpeech = speechOutput;
-        this.emit(":elicitSlot", "Location", speechOutput, repromptSpeech);
+        this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
       });
   },
   SessionEndedRequest: function() {
