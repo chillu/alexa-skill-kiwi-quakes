@@ -47,6 +47,14 @@ npm run ask -- deploy --target skill
 npm run serverless -- deploy
 ```
 
+In case you're running a custom AWS profile (example: `kiwiquakes`):
+
+```
+npm run ask -- deploy --target model -p kiwiquakes
+npm run ask -- deploy --target skill -p kiwiquakes
+npm run serverless -- deploy --awsProfile kiwiquakes
+```
+
 ## Testing
 
 Uses [Mocha](http://http://mochajs.org/).
