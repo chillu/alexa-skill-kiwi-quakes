@@ -4,7 +4,7 @@ const subSeconds = require("date-fns/sub_seconds");
 const { convertToSecond } = require("duration-iso-8601");
 
 // Config
-const defaultHoursAgo = 6;
+const minMmi = 3;
 
 /**
  * @param {Array} quakes
@@ -37,25 +37,24 @@ module.exports = function(quakes, { since = "PT6H", currDate }) {
   }
 
   const quake = matchingQuakes[0];
-
   const { time, locality, mmi } = quake.properties;
-
-  const hasQuake =
-    differenceInHours(new Date(time), currDate) >= -1 * defaultHoursAgo;
-
-  if (!hasQuake) {
-    return Promise.resolve({
-      success: false,
-      message: `No quakes found since ${sinceNice} ago`
-    });
-  }
 
   const relativeTime = distanceInWords(new Date(time), currDate, {
     includeSeconds: false
   });
 
+  var msg;
+  if (matchingQuakes.length > 1) {
+    msg =
+      `There have been ${matchingQuakes.length} ` +
+      `quakes with magnitude ${minMmi} or greater since ${sinceNice} ago. ` +
+      `The biggest one was a magnitude ${mmi} quake, ${relativeTime} ago, ${locality}`;
+  } else {
+    msg = `There has been a magnitude ${mmi} quake ${relativeTime} ago, ${locality}`;
+  }
+
   return Promise.resolve({
     success: true,
-    message: `There has been a magnitude ${mmi} quake ${relativeTime} ago, ${locality}`
+    message: msg
   });
 };
