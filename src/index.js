@@ -28,6 +28,15 @@ const handlers = {
       });
     });
   },
+  FindQuakeSinceIntent: function() {
+    getQuakes().then(quakes => {
+      const { slots } = this.event.request.intent;
+      selectQuake(quakes, { since: slots.Duration.value }).then(res => {
+        this.response.speak(res.message);
+        this.emit(":responseReady");
+      });
+    });
+  },
   SetLocationIntent: function() {
     const { userId } = this.event.session.user;
     const { slots } = this.event.request.intent;

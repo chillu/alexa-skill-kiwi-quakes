@@ -1,27 +1,42 @@
 const differenceInHours = require("date-fns/difference_in_hours");
 const distanceInWords = require("date-fns/distance_in_words");
+const subSeconds = require("date-fns/sub_seconds");
+const { convertToSecond } = require("duration-iso-8601");
 
 // Config
 const defaultHoursAgo = 6;
 
 /**
  * @param {Array} quakes
- * @param {String} currDate For mocking purposes
+ * @param {Object} options.
+ *   - since:  ISO 8601 relative duration
+ *   - currDate:  For mocking purposes
  * @return {Promise}
  */
-module.exports = function(quakes, currDate) {
+module.exports = function(quakes, { since = "PT6H", currDate }) {
   if (!currDate) {
     currDate = new Date();
   }
 
+  const sinceDate = subSeconds(currDate, convertToSecond(since));
+  const sinceNice = distanceInWords(sinceDate, currDate);
+  console.log(since);
+  console.log(sinceDate);
+  console.log(sinceNice);
+  // Filter quakes, and sort descending by magnitude
+  const matchingQuakes = quakes.features
+    .filter(quake => new Date(quake.properties.time) >= sinceDate)
+    .sort((a, b) => b.properties.magnitude - a.properties.magnitude);
+
   // Can't use async/await in NodeJS 6 on Lambda, sigh...
-  const quake = quakes.features[0];
-  if (!quake) {
+  if (!matchingQuakes.length) {
     return Promise.resolve({
       success: false,
-      message: `No quakes found in the last ${defaultHoursAgo} hours`
+      message: `No quakes found since ${sinceNice} ago`
     });
   }
+
+  const quake = matchingQuakes[0];
 
   const { time, locality, mmi } = quake.properties;
 
@@ -31,7 +46,7 @@ module.exports = function(quakes, currDate) {
   if (!hasQuake) {
     return Promise.resolve({
       success: false,
-      message: `No quakes found in the last ${defaultHoursAgo} hours`
+      message: `No quakes found since ${sinceNice} ago`
     });
   }
 
