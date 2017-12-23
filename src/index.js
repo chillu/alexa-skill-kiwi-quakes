@@ -21,8 +21,9 @@ const handlers = {
     this.emit(":responseReady");
   },
   FindQuakeIntent: function() {
+    const { latLng } = this.attributes;
     getQuakes().then(quakes => {
-      selectQuake(quakes).then(res => {
+      selectQuake(quakes, { latLng }).then(res => {
         this.response.speak(res.message);
         this.emit(":responseReady");
       });
@@ -31,7 +32,9 @@ const handlers = {
   FindQuakeSinceIntent: function() {
     getQuakes().then(quakes => {
       const { slots } = this.event.request.intent;
-      selectQuake(quakes, { since: slots.Duration.value }).then(res => {
+      const since = slots.Duration.value;
+      const { latLng } = this.attributes;
+      selectQuake(quakes, { since, latLng }).then(res => {
         this.response.speak(res.message);
         this.emit(":responseReady");
       });

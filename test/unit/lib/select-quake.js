@@ -30,4 +30,10 @@ describe("selectQuake", function() {
       expect(res.message).to.contain("No quakes found since 1 day ago");
     });
   });
+  it("should optionally include location", () => {
+    const latLng = { latitude: 173.8478163, longitude: -41.33280867 };
+    return selectQuake(fixtureQuakesRecent, { latLng, currDate }).then(res => {
+      expect(res.message).to.contain("111 kilometers away");
+    });
+  });
 });
