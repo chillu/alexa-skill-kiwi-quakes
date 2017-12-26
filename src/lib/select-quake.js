@@ -44,17 +44,14 @@ module.exports = function(quakes, { since = "PT6H", currDate, latLng }) {
   });
 
   var distanceOrLocality;
-  console.log("latLng", latLng);
   if (latLng) {
     const quakeCoords = {
-      latitude: quake.geometry.coordinates[0],
-      longitude: quake.geometry.coordinates[1]
+      latitude: quake.geometry.coordinates[1],
+      longitude: quake.geometry.coordinates[0]
     };
-    console.log("quakeCoords", quakeCoords);
     const kms = haversine(latLng, quakeCoords, {
       radius: haversine.EARTH.KM
     }).toFixed(0);
-    console.log("kms", kms);
     distanceOrLocality = `${kms} kilometers away, ${locality}`;
   } else {
     distanceOrLocality = locality;
