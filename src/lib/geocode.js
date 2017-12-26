@@ -2,16 +2,30 @@ const NodeGeocoder = require("node-geocoder");
 
 /**
  * @param {String}
- * @param {String}
+ * @param {Object} options
  * @return {Promise}
  */
-module.exports = function(loc, apiKey) {
+module.exports = function(loc, { apiKey }) {
   var geocoder = NodeGeocoder({
     provider: "google",
-    apiKey: apiKey
+    apiKey: apiKey,
+    excludePartialMatches: true
   });
 
-  geocoder.geocode({ address: loc, country: "New Zealand" }).then(res => {
-    return ({ latitude, longitude } = res);
-  });
+  return geocoder
+    .geocode({ address: loc, country: "New Zealand" })
+    .then(results => {
+      const result = results ? results[0] : null;
+
+      if (!result) {
+        Promise.reject("No matches found");
+      }
+
+      // See https://developers.google.com/maps/documentation/geocoding/intro#Results
+      if (!result.city) {
+        Promise.reject("No city-level match found");
+      }
+
+      return ({ latitude, longitude, formattedAddress } = result);
+    });
 };

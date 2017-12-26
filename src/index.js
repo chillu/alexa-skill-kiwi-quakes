@@ -3,8 +3,7 @@
 const Alexa = require("alexa-sdk");
 const getQuakes = require("./lib/geonet").getQuakes;
 const selectQuake = require("./lib/select-quake");
-const NodeGeocoder = require("node-geocoder");
-const setLocation = require("./lib/set-location");
+const geocode = require("./lib/geocode");
 
 exports.handler = function(event, context) {
   const alexa = Alexa.handler(event, context);
@@ -43,11 +42,6 @@ const handlers = {
   SetLocationIntent: function() {
     const { userId } = this.event.session.user;
     const { slots } = this.event.request.intent;
-    const geocoder = NodeGeocoder({
-      provider: "google",
-      apiKey: process.env.GOOGLE_API_KEY
-    });
-    console.log("GOOGLE_API_KEY", process.env.GOOGLE_API_KEY);
 
     // Value not filled
     if (!slots.City.value) {
@@ -57,13 +51,9 @@ const handlers = {
       return this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
     }
 
-    geocoder
-      .geocode({ address: slots.City.value, country: "New Zealand" })
-      .then(results => {
-        console.log("results", results);
-        // TODO Handle no places found
-
-        const result = results[0];
+    geocode(slots.City.value, { apiKey: process.env.GOOGLE_API_KEY })
+      .then(result => {
+        console.log("result", result);
         const { latitude, longitude, formattedAddress } = result;
         this.attributes.latLng = { latitude, longitude };
 
