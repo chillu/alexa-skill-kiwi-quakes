@@ -1,0 +1,16 @@
+{
+  "type": "Feature",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [173.8478163, -42.33280867]
+  },
+  "properties": {
+    "publicID": "2017p941795",
+    "time": "2017-12-15T11:08:44.756Z",
+    "depth": 34.53125,
+    "magnitude": 3.83807855,
+    "locality": "15 km north-east of Kaikoura",
+    "mmi": 4,
+    "quality": "good"
+  }
+}
