@@ -20,10 +20,13 @@ const handlers = {
     this.emit(":responseReady");
   },
   FindQuakeIntent: function() {
-    const { latLng } = this.attributes;
+    const { latLng, locationOptOut } = this.attributes;
     getQuakes().then(quakes => {
       selectQuake(quakes, { latLng }).then(res => {
-        this.response.speak(res.message);
+        const msg = res.message;
+        const promptForLocation = !latLng && !locationOptOut;
+
+        this.response.speak(msg);
         this.emit(":responseReady");
       });
     });
@@ -50,8 +53,7 @@ const handlers = {
       return this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
     }
 
-    // Technically we don't need the City slot
-    geocode(slots.PostCode.value, slots.City.value, {
+    geocode(slots.PostCode.value, {
       apiKey: process.env.GOOGLE_API_KEY
     })
       .then(result => {

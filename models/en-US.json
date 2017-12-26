@@ -596,20 +596,17 @@
             {
               "name": "PostCode",
               "type": "AMAZON.FOUR_DIGIT_NUMBER"
-            },
-            {
-              "name": "City",
-              "type": "NZ_CITY"
             }
           ],
           "samples": [
-            "set my location to {PostCode} {City}",
-            "set my location as {PostCode} {City}",
-            "set location to {PostCode} {City}",
-            "set location as {PostCode} {City}",
-            "set my address to {PostCode} {City}",
-            "set my city to {PostCode} {City}",
-            "set my town to {PostCode} {City}"
+            "set my post code to {PostCode}",
+            "set my post code as {PostCode}",
+            "set my postal code to {PostCode}",
+            "set my postal code as {PostCode}",
+            "set my zip code to {PostCode}",
+            "set my zip code as {PostCode}",
+            "that my post code is {PostCode}",
+            "that my zip code is {PostCode}"
           ]
         },
         {
