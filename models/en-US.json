@@ -594,18 +594,22 @@
           "name": "SetLocationIntent",
           "slots": [
             {
+              "name": "PostCode",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
               "name": "City",
               "type": "NZ_CITY"
             }
           ],
           "samples": [
-            "set my location to {City}",
-            "set my location as {City}",
-            "set location to {City}",
-            "set location as {City}",
-            "set my address to {City}",
-            "set my city to {City}",
-            "set my town to {City}"
+            "set my location to {PostCode} {City}",
+            "set my location as {PostCode} {City}",
+            "set location to {PostCode} {City}",
+            "set location as {PostCode} {City}",
+            "set my address to {PostCode} {City}",
+            "set my city to {PostCode} {City}",
+            "set my town to {PostCode} {City}"
           ]
         },
         {

@@ -2,10 +2,11 @@ const NodeGeocoder = require("node-geocoder");
 
 /**
  * @param {String}
+ * @param {String}
  * @param {Object} options
  * @return {Promise}
  */
-module.exports = function(loc, { apiKey }) {
+module.exports = function(postCode, city, { apiKey }) {
   var geocoder = NodeGeocoder({
     provider: "google",
     apiKey: apiKey,
@@ -13,8 +14,10 @@ module.exports = function(loc, { apiKey }) {
   });
 
   return geocoder
-    .geocode({ address: loc, country: "New Zealand" })
+    .geocode({ address: city, zipcode: postCode, country: "New Zealand" })
     .then(results => {
+      // TODO Handle rate limits
+
       const result = results ? results[0] : null;
 
       if (!result) {

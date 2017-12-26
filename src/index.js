@@ -44,14 +44,16 @@ const handlers = {
     const { slots } = this.event.request.intent;
 
     // Value not filled
-    if (!slots.City.value) {
-      const speechOutput =
-        "What's your location? Use your city for best results";
+    if (!slots.PostCode.value) {
+      const speechOutput = "What's your postcode?";
       const repromptSpeech = speechOutput;
-      return this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
+      return this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
     }
 
-    geocode(slots.City.value, { apiKey: process.env.GOOGLE_API_KEY })
+    // Technically we don't need the City slot
+    geocode(slots.PostCode.value, slots.City.value, {
+      apiKey: process.env.GOOGLE_API_KEY
+    })
       .then(result => {
         console.log("result", result);
         const { latitude, longitude, formattedAddress } = result;
@@ -64,9 +66,9 @@ const handlers = {
       .catch(() => {
         // TODO Handle generic error (e.g. API limits)
         const speechOutput =
-          "Sorry, I couldn't find a location. Use your city for best results";
+          "Sorry, I couldn't find a location. What's your postcode?";
         const repromptSpeech = speechOutput;
-        this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
+        this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
       });
   },
   SessionEndedRequest: function() {
