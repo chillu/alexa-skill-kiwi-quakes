@@ -573,6 +573,12 @@
         },
         {
           "name": "FindQuakeIntent",
+          "slots": [
+            {
+              "name": "Duration",
+              "type": "AMAZON.DURATION"
+            }
+          ],
           "samples": [
             "check if there was an earthquake",
             "check if there was a quake",
@@ -587,7 +593,14 @@
             "is this an earthquake",
             "is this a quake",
             "did we have an earthquake",
-            "did we have a quake"
+            "did we have a quake",
+            "check if there was an earthquake in the last {Duration}",
+            "check if there was a quake in the last {Duration}",
+            "was there an earthquake in the last {Duration}",
+            "was there a quake in the last {Duration}",
+            "if there was an earthquake in the last {Duration}",
+            "if there was a quake in the last {Duration}",
+            "did we have an earthquake in the last {Duration}"
           ]
         },
         {
@@ -607,24 +620,6 @@
             "set my zip code as {PostCode}",
             "that my post code is {PostCode}",
             "that my zip code is {PostCode}"
-          ]
-        },
-        {
-          "name": "FindQuakeSinceIntent",
-          "slots": [
-            {
-              "name": "Duration",
-              "type": "AMAZON.DURATION"
-            }
-          ],
-          "samples": [
-            "check if there was an earthquake in the last {Duration}",
-            "check if there was a quake in the last {Duration}",
-            "was there an earthquake in the last {Duration}",
-            "was there a quake in the last {Duration}",
-            "if there was an earthquake in the last {Duration}",
-            "if there was a quake in the last {Duration}",
-            "did we have an earthquake in the last {Duration}"
           ]
         }
       ]

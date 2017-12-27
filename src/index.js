@@ -21,23 +21,12 @@ const handlers = {
   },
   FindQuakeIntent: function() {
     const { latLng, locationOptOut } = this.attributes;
+    const { slots } = this.event.request.intent;
+    const since = slots.Duration.value; // optional
     getQuakes().then(quakes => {
-      selectQuake(quakes, { latLng }).then(res => {
-        const msg = res.message;
-        const promptForLocation = !latLng && !locationOptOut;
-
-        this.response.speak(msg);
-        this.emit(":responseReady");
-      });
-    });
-  },
-  FindQuakeSinceIntent: function() {
-    getQuakes().then(quakes => {
-      const { slots } = this.event.request.intent;
-      const since = slots.Duration.value;
-      const { latLng } = this.attributes;
       selectQuake(quakes, { since, latLng }).then(res => {
-        this.response.speak(res.message);
+        const msg = res.message;
+        this.response.speak(msg);
         this.emit(":responseReady");
       });
     });
