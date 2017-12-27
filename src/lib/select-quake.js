@@ -1,5 +1,5 @@
 const differenceInHours = require("date-fns/difference_in_hours");
-const distanceInWords = require("date-fns/distance_in_words");
+const distanceInWordsStrict = require("date-fns/distance_in_words_strict");
 const subSeconds = require("date-fns/sub_seconds");
 const { convertToSecond } = require("duration-iso-8601");
 const haversine = require("haversine-js");
@@ -21,7 +21,7 @@ module.exports = function(quakes, { since = "PT6H", currDate, latLng }) {
   }
 
   const sinceDate = subSeconds(currDate, convertToSecond(since));
-  const sinceNice = distanceInWords(sinceDate, currDate);
+  const sinceNice = distanceInWordsStrict(sinceDate, currDate);
 
   // Filter quakes, and sort descending by magnitude
   const matchingQuakes = quakes.features
@@ -32,7 +32,7 @@ module.exports = function(quakes, { since = "PT6H", currDate, latLng }) {
   if (!matchingQuakes.length) {
     return Promise.resolve({
       success: false,
-      message: `No quakes found since ${sinceNice} ago`
+      message: `No quakes found in the last ${sinceNice}`
     });
   }
 
@@ -61,7 +61,7 @@ module.exports = function(quakes, { since = "PT6H", currDate, latLng }) {
   if (matchingQuakes.length > 1) {
     msg =
       `There have been ${matchingQuakes.length} ` +
-      `quakes with magnitude ${minMmi} or greater since ${sinceNice} ago. ` +
+      `quakes with magnitude ${minMmi} or greater in the last ${sinceNice}. ` +
       `The biggest one was a magnitude ${mmi} quake, ${relativeTime} ago, ${distanceOrLocality}`;
   } else {
     msg = `There has been a magnitude ${mmi} quake ${relativeTime} ago, ${distanceOrLocality}`;
