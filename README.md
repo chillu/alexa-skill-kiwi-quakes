@@ -42,7 +42,6 @@ Now copy `config.default.json` to `config.json` and set your
 Full deploy (AWS skills, models and lambda function)
 
 ```
-npm run ask -- deploy --target model
 npm run ask -- deploy --target skill
 npm run serverless -- deploy
 ```
@@ -50,10 +49,15 @@ npm run serverless -- deploy
 In case you're running a custom AWS profile (example: `kiwiquakes`):
 
 ```
-npm run ask -- deploy --target model -p kiwiquakes
 npm run ask -- deploy --target skill -p kiwiquakes
 npm run serverless -- deploy --awsProfile kiwiquakes
 ```
+
+While the skill model is mostly definable as JSON in `models/`,
+the [dialog model](https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html)
+can't be defined in this way yet. You'll need to go into the
+[Alexa Skills Builder](https://developer.amazon.com/alexacreator/)
+and paste in the `interaction-model.json` file.
 
 ## Testing
 

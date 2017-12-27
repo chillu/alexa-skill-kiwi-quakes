@@ -39,14 +39,19 @@ const handlers = {
     const { userId } = this.event.session.user;
     const { slots } = this.event.request.intent;
 
-    // Value not filled
     if (!slots.PostCode.value) {
       const speechOutput = "What's your postcode?";
       const repromptSpeech = speechOutput;
       return this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
     }
 
-    geocode(slots.PostCode.value, {
+    if (!slots.City.value) {
+      const speechOutput = "What's your city?";
+      const repromptSpeech = speechOutput;
+      return this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
+    }
+
+    geocode(slots.PostCode.value, slots.City.value, {
       apiKey: process.env.GOOGLE_API_KEY
     })
       .then(result => {
@@ -54,16 +59,18 @@ const handlers = {
         const { latitude, longitude, formattedAddress } = result;
         this.attributes.latLng = { latitude, longitude };
 
-        // Slot value is not confirmed
+        // TODO Allow confirming slot value
         this.response.speak(`Setting your location to ${formattedAddress}`);
         this.emit(":responseReady");
       })
-      .catch(() => {
+      .catch(e => {
+        console.log("err", e);
         // TODO Handle generic error (e.g. API limits)
-        const speechOutput =
-          "Sorry, I couldn't find a location. What's your postcode?";
-        const repromptSpeech = speechOutput;
-        this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
+        var updatedIntent = this.event.request.intent;
+        updatedIntent.slots.City.value = null;
+        updatedIntent.slots.PostCode.value = null;
+        this.emit(":tell", "Sorry, I couldn't find a location");
+        this.emit(":delegate", updatedIntent);
       });
   },
   SessionEndedRequest: function() {
@@ -75,7 +82,8 @@ const handlers = {
   },
   "AMAZON.HelpIntent": function() {
     this.response.speak(
-      "You can try: 'alexa, ask kiwi quakes if this was an earthquake'"
+      "You can try: 'alexa, ask kiwi quakes if this was an earthquake'. " +
+        "For more accurate information, say 'alexa, tell kiwi quakes to set my location to post code'"
     );
     this.emit(":responseReady");
   },
