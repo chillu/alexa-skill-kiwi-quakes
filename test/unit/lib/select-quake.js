@@ -39,14 +39,14 @@ describe("selectQuake", function() {
     const quakes = getFixture([fixQuakeOldMag3]);
     const since = "PT24H";
     return selectQuake(quakes, { since, currDate }).then(res => {
-      expect(res.message).to.contain("No quakes found since 1 day ago");
+      expect(res.message).to.contain("No quakes found in the last day");
     });
   });
   it("should optionally include location", () => {
     const quakes = getFixture([fixQuakeRecentMag3]);
-    const latLng = { latitude: -41.33280867, longitude: 173.8478163 };
+    const latLng = { latitude: -42.3, longitude: 173.8 };
     return selectQuake(quakes, { latLng, currDate }).then(res => {
-      expect(res.message).to.contain("111 kilometers away");
+      expect(res.message).to.contain("5 kilometers away");
     });
   });
 });

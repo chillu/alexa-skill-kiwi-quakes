@@ -12,6 +12,10 @@ exports.handler = function(event, context) {
   alexa.execute();
 };
 
+const defaults = {
+  since: "PT10M" // 10 minutes
+};
+
 const handlers = {
   LaunchRequest: function() {
     this.response.speak(
@@ -20,9 +24,9 @@ const handlers = {
     this.emit(":responseReady");
   },
   FindQuakeIntent: function() {
-    const { latLng, locationOptOut } = this.attributes;
+    const { latLng } = this.attributes;
     const { slots } = this.event.request.intent;
-    const since = slots.Duration.value; // optional
+    const since = slots.Duration.value ? slots.Duration.value : defaults.since;
     getQuakes().then(quakes => {
       selectQuake(quakes, { since, latLng }).then(res => {
         const msg = res.message;
