@@ -61,9 +61,9 @@ const handlers = {
 
         // TODO Allow confirming slot value
         this.response.speak(
-          `<speak><say-as interpret-as="address">` +
+          `<say-as interpret-as="address">` +
             `Setting your location to ${formattedAddress}` +
-            `</say-as></speak>`
+            `</say-as>`
         );
         this.emit(":responseReady");
       })
