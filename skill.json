@@ -19,6 +19,24 @@
           "name": "kiwi quakes",
           "description":
             "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
+        },
+        "en-US": {
+          "summary": "Earthquake info for New Zealanders",
+          "examplePhrases": [
+            "Alexa ask kiwi quakes if that was an earthquake",
+            "Alexa ask kiwi quakes if there were any quakes in the last six hours",
+            "Alexa tell kiwi quakes to set my location"
+          ],
+          "keywords": [
+            "earthquake",
+            "geographic",
+            "scientific",
+            "new",
+            "zealand"
+          ],
+          "name": "kiwi quakes",
+          "description":
+            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
         }
       },
       "isAvailableWorldwide": true,
@@ -40,6 +58,10 @@
       "allowsPurchases": false,
       "locales": {
         "en-AU": {
+          "termsOfUseUrl": "",
+          "privacyPolicyUrl": ""
+        },
+        "en-US": {
           "termsOfUseUrl": "",
           "privacyPolicyUrl": ""
         }
