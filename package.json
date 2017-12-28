@@ -8,7 +8,12 @@
     "lint": "prettier --write src/**/*.js test/**/*.js",
     "test": "mocha ./test/**/*.js",
     "serverless": "serverless",
-    "ask": "ask"
+    "ask": "ask",
+    "update-skill":
+      "ask api update-skill -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f skill.json -p kiwiquakes",
+    "update-model":
+      "ask api update-model -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f models/en-AU.json -l en-AU -p kiwiquakes",
+    "deploy": "serverless deploy --awsProfile kiwiquakes"
   },
   "dependencies": {
     "alexa-sdk": "^1.0.0",

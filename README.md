@@ -29,35 +29,18 @@ deployed through the [Serverless Framework](http://serverless.com).
 npm install
 ```
 
-The project is hard-wired to a certain AWS stack (see `.ask/config`).
-You'll need to use [ask clone](https://developer.amazon.com/docs/smapi/ask-cli-command-reference.html#clone-command)
-to create your own version.
-
 Now copy `config.default.json` to `config.json` and set your
 [Google API key](https://developers.google.com/maps/documentation/geocoding/get-api-key)
 (required for geocoding lookups);
 
 ## Usage
 
-Full deploy (AWS skills, models and lambda function)
+Full deploy (AWS skills, models and lambda function).
+Adjust the skill id and AWS profile accordingly in `package.json`.
 
-```
-npm run ask -- deploy --target skill
-npm run serverless -- deploy
-```
-
-In case you're running a custom AWS profile (example: `kiwiquakes`):
-
-```
-npm run ask -- deploy --target skill -p kiwiquakes
-npm run serverless -- deploy --awsProfile kiwiquakes
-```
-
-While the skill model is mostly definable as JSON in `models/`,
-the [dialog model](https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html)
-can't be defined in this way yet. You'll need to go into the
-[Alexa Skills Builder](https://developer.amazon.com/alexacreator/)
-and paste in the `interaction-model.json` file.
+* `npm run update-skill`: Deploys skill
+* `npm run update-model`: Deploys model
+* `npm run deploy`: Deploys lambda function
 
 ## Testing
 

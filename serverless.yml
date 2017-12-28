@@ -1,4 +1,4 @@
-service: alexa-skill-kiwiquakes
+service: alexa-skill-kiwiquakes-new
 
 provider:
   name: aws
@@ -8,15 +8,26 @@ provider:
   memorySize: 256
   cfLogs: true
   profile: kiwiquakes
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-east-1:*:table/usersTable"
   environment:
     GOOGLE_API_KEY: ${file(config.json):GOOGLE_API_KEY}
 
 functions:
   skill: # function name
-    handler: src/index.handler # path to the alexa handler function: {path}/{filename}.{handler function}
+    handler: src/index.handler
     description: Alexa Skill for New Zealand Earthquakes
     events:
-      - alexaSkill # function trigger. for alexa skills it 'alexaSkill'
+      - alexaSkill
 
 resources:
   Resources:
