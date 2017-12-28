@@ -1,0 +1,74 @@
+{
+  "skillManifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-AU": {
+          "summary": "Earthquake info for New Zealanders",
+          "examplePhrases": [
+            "Alexa ask kiwi quakes if that was an earthquake",
+            "Alexa ask kiwi quakes if there were any quakes in the last six hours",
+            "Alexa tell kiwi quakes to set my location"
+          ],
+          "keywords": [
+            "earthquake",
+            "geographic",
+            "scientific",
+            "new",
+            "zealand"
+          ],
+          "name": "kiwi quakes",
+          "description":
+            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
+        },
+        "en-US": {
+          "summary": "Earthquake info for New Zealanders",
+          "examplePhrases": [
+            "Alexa ask kiwi quakes if that was an earthquake",
+            "Alexa ask kiwi quakes if there were any quakes in the last six hours",
+            "Alexa tell kiwi quakes to set my location"
+          ],
+          "keywords": [
+            "earthquake",
+            "geographic",
+            "scientific",
+            "new",
+            "zealand"
+          ],
+          "name": "kiwi quakes",
+          "description":
+            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions":
+        "Should come up with the latest quake (magnitude 3 or higher) from http://www.geonet.org.nz/earthquake/light. The underlying data (https://api.geonet.org.nz/) is in the public domain, and used according to the data policy outlined at http://www.geonet.org.nz/policy.\n\nUsers can optionally set their location through city and post code. This is based on a custom list of New Zealand cities. Try PostCode=6023 and City=Wellington. \n\nThis approach for location setting is used for two reasons:\n1. Alexa hasn't launched in the main target market yet (New Zealand), and hence the skill can't ask for the location through the profile. Once Alexa has launched there, I'll default to the profile data (requesting permission through the skill)\n2. If used outside of New Zealand, the Alexa profile address will be different from the one used for this New Zealand centric information. For example, my parents living in Germany checking for earthquakes where I live (Wellington, New Zealand). This is also the reason I'm asking for this skill to be available in all countries.",
+      "category": "EDUCATION_AND_REFERENCE",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri":
+            "arn:aws:lambda:us-east-1:500167713120:function:alexa-kiwiquakes-prod-skill"
+        }
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-AU": {
+          "termsOfUseUrl": "",
+          "privacyPolicyUrl": ""
+        },
+        "en-US": {
+          "termsOfUseUrl": "",
+          "privacyPolicyUrl": ""
+        }
+      },
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "usesPersonalInfo": false
+    }
+  }
+}

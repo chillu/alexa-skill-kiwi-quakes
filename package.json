@@ -9,11 +9,20 @@
     "test": "mocha ./test/**/*.js",
     "serverless": "serverless",
     "ask": "ask",
-    "update-skill":
-      "ask api update-skill -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f skill.json -p kiwiquakes",
-    "update-model":
-      "ask api update-model -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f models/en-AU.json -l en-AU -p kiwiquakes && ask api update-model -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f models/en-US.json -l en-US -p kiwiquakes",
-    "deploy": "serverless deploy --awsProfile kiwiquakes"
+    "deploy:dev":
+      "npm run deploy:dev:skill && npm run deploy:dev:model && npm run deploy:dev:sls",
+    "deploy:dev:skill":
+      "ask api update-skill -s amzn1.ask.skill.a914596c-c0b2-42ad-a61b-a7b56bdc76de -f skill.dev.json -p kiwiquakes",
+    "deploy:dev:model":
+      "ask api update-model -s amzn1.ask.skill.a914596c-c0b2-42ad-a61b-a7b56bdc76de -f models/en-AU.dev.json -l en-AU -p kiwiquakes && ask api update-model -s amzn1.ask.skill.a914596c-c0b2-42ad-a61b-a7b56bdc76de -f models/en-US.dev.json -l en-US -p kiwiquakes",
+    "deploy:dev:sls": "serverless deploy -s dev",
+    "deploy:prod":
+      "npm run deploy:prod:skill && npm run deploy:prod:model && npm run deploy:prod:sls",
+    "deploy:prod:skill":
+      "ask api update-skill -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f skill.prod.json -p kiwiquakes",
+    "deploy:prod:model":
+      "ask api update-model -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f models/en-AU.prod.json -l en-AU -p kiwiquakes && ask api update-model -s amzn1.ask.skill.737654e2-bd6f-4827-9c5e-3a4a71044acf -f models/en-US.prod.json -l en-US -p kiwiquakes",
+    "deploy:prod:sls": "serverless deploy -s prod"
   },
   "dependencies": {
     "alexa-sdk": "^1.0.0",

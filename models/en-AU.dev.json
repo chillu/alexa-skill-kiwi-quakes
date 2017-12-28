@@ -1,0 +1,3417 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "kiwi quakes dev",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "FindQuakeIntent",
+          "slots": [
+            {
+              "name": "Duration",
+              "type": "AMAZON.DURATION"
+            }
+          ],
+          "samples": [
+            "check if there was an earthquake",
+            "check if there was a quake",
+            "check if that was an earthquake",
+            "check if that was a quake",
+            "was this an earthquake",
+            "was this a quake",
+            "was there an earthquake",
+            "was there a quake",
+            "if this was an earthquake",
+            "if this was a quake",
+            "is this an earthquake",
+            "is this a quake",
+            "did we have an earthquake",
+            "did we have a quake",
+            "check if there was an earthquake in the last {Duration}",
+            "check if there was a quake in the last {Duration}",
+            "was there an earthquake in the last {Duration}",
+            "was there a quake in the last {Duration}",
+            "if there was an earthquake in the last {Duration}",
+            "if there was a quake in the last {Duration}",
+            "did we have an earthquake in the last {Duration}"
+          ]
+        },
+        {
+          "name": "SetLocationIntent",
+          "slots": [
+            {
+              "name": "PostCode",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER"
+            },
+            {
+              "name": "City",
+              "type": "NZ_CITY"
+            }
+          ],
+          "samples": ["set my location", "set my location to {PostCode} {City}"]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Ahaura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ahipara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ahititi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ahuroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Akaroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Akitio",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Albany",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Albert Town",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Albury",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Alexandra",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Allanton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Amberley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Anakiwa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Aranga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Aramoana",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Arapohue",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Arrowtown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Arundel",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ashburton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ashhurst",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ashley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Auckland",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Auroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Awanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Balclutha",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Balfour",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Barrhill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Barrytown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Beachlands",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Beaumont",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bell Block",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Benhar",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Benneydale",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bideford",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Blackball",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Blenheim",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bluff",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Brighton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Brightwater",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Broadwood",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bulls",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Bunnythorpe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Burnt Hill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Cambridge",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Canvastown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Carterton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Cheviot",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Christchurch",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clarkville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clarksville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clevedon",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clinton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clive",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Clyde",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Coatesville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Collingwood",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Colville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Coopers Creek",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Coroglen",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Coromandel",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Cromwell",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Culverden",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Cust",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dairy Flat",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dannevirke",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Darfield",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dargaville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dipton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dobson",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Drury",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Dunedin",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Duntroon",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Eastbourne",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Edendale",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Edgecumbe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Egmont Village",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Eketahuna",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Eltham",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ettrick",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Eyrewell Forest",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Fairhall",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Fairlie",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Featherston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Feilding",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Fernside",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Flaxmere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Flaxton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Fox Glacier",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Foxton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Foxton Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Frankton, Otago",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Frankton, Waikato",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Franz Josef",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Geraldine",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Gisborne",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Glenorchy",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Glentui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Gore",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Granity",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Greymouth",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Greytown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Grovetown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Gummies Bush",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Haast",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hakataramea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Halcombe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hamilton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hampden",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hanmer Springs",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hari Hari",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hastings",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Haumoana",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Haupiri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Havelock",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Havelock North",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hāwea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hawera",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Helensville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Henley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Herbert",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Herekino",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hikuai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hikurangi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hikutaia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hinuera",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hokitika",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hope",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Horeke",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Houhora",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Howick",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Huapai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Huiakama",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Huirangi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hukerenui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hunterville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Huntly",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Hurleyville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Inangahua Junction",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Inglewood",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Invercargill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Jack's Point",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Jacobs River",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaeo",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaiapoi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaihu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaikohe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaikoura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaimata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaingaroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kakanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaipara Flats",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kairaki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaitaia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaitangata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaiwaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kakaramea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaniere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaponga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Karamea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Karetu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Karitane",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Katikati",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kaukapakapa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kauri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kawakawa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kawerau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kennedy Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kerikeri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kihikihi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kinloch",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kingston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kirwee",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kohukohu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Koitiata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kokatahi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kokopu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Koromiko",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kumara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kumeu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Kurow",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lauriston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lawrence",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Leeston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Leigh",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lepperton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Levin",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lincoln",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Linkwater",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Little River",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Loburn",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lower Hutt",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Luggate",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lumsden",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Lyttelton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Makahu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manaia, Taranaki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manaia, Coromandel",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manakau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manapouri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mangakino",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mangamuka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mangatoki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mangawhai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manukau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manurewa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Manutahi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mapua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maraetai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Marco",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maromaku",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Marsden Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Martinborough",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Marton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maruia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Masterton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matakana",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matakohe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matamata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matapu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matarangi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matarau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mataura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Matihetihe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maungakaramea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maungatapere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Maungaturoto",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mayfield",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Meremere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Methven",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Middlemarch",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Midhirst",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Millers Flat",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Milton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mimi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Minginui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Moana",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Moawhango",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Moenui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Moeraki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Moerewa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mokau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mokoia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Morrinsville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mosgiel",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mossburn",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Motatau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Motueka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mount Maunganui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Mount Somers",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Murchison",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Murupara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Napier",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Naseby",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Nelson",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "New Brighton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "New Plymouth",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Normanby",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngaere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngamatapouri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngapara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngaruawahia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngataki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngatea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngongotaha",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ngunguru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Nightcaps",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Norfolk",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Norsewood",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oakura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oamaru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oban",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ohakune",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ohaeawai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ohangai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ohoka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ōhope Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ohura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Okaihau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Okato",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Okuku",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Omanaia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Omarama",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Omata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Omokoroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Onewhero",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Opononi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Opotiki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Opua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Opunake",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oratia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Orewa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oromahoe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oruaiti",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otaika",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otaki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otakou",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otautau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otiria",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Otorohanga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Owaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Oxford",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paekakariki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paeroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pahiatua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paihia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pakaraka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pakiri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pakotai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Palmerston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Palmerston North",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pamapuria",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Panguru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Papakura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Papamoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paparoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paparore",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Papatoetoe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Parakai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paraparaumu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paremoremo",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pareora",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Paroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Parua Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Patea",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pauanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pauatahanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pegasus",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Peka Peka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pembroke",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Peria",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Petone",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Picton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Piopio",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pipiwai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pirongia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pleasant Point",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Plimmerton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pokeno",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Porirua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Portland",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Poroti",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Port Chalmers",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Portobello",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pukekohe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pukerua Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pukeuri",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Pukepoto",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Punakaiki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Purua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Putaruru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Putorino",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Queenstown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Raetihi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Raglan",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rahotu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rai Valley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rakaia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ramarama",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ranfurly",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rangiora",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rapaura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ratapiko",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Raumati",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rawene",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rawhitiroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Reefton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Renwick",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Reporoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Richmond",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riverhead",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riverlands",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riversdale",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riversdale Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riverton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Riwaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rolleston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ross",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Rotorua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Roxburgh",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ruatoria",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ruakaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ruawai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Runanga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Russell",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Saint Andrews",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Saint Arnaud",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Saint Bathans",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Sanson",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Seacliff",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Seddon",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Seddonville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Sefton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Sheffield",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Shannon",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Silverdale",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Snells Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Springfield",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Springston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Spring Creek",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Stirling",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Stratford",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Swannanoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taharoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taieri Mouth",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taihape",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taipa-Mangonui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tairua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Takaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tangiteroria",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tapanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tapu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tangowahine",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tapawera",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tapora",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taradale",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tauhoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taumarunui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taupaki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Taupo",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tauranga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tauraroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tautoro",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Anau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Arai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Aroha",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Awamutu",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Awanga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Hapua",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Horo",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Kao",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Kauwhata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Kopuru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Kuiti",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Poi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Puke",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Puru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Temuka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Te Rerenga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Thames",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tikorangi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Timaru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tinopai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tinwald",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tirau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Titoki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tokarahi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Toko",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tokanui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tokoroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tolaga Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tomarata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Towai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tuahiwi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tuai",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tuakau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tuamarina",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Tuatapere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Turangi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Twizel",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Umawera",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Upper Hutt",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Upper Moutere",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Urenui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Uruti",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "View Hill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waddington",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiheke Island",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waipango",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waharoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiharara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waihi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waihi Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waihola",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikaia",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikanae",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikawa, Marlborough",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikawa, Southland",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikouaiti",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikuku",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waikuku Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waima",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waimangaroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waimate",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waimate North",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waimauku",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wainui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wainuiomata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waioneke",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiouru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiotira",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waipawa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waipukurau",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wairakei",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wairau Valley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wairoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitahuna",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitaria Bay",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitati",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitoki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitoriki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waitotara",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiuku",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waiwera",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wakefield",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wallacetown",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Walton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Waverley",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wanaka",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Ward",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wardville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Warrington",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Warkworth",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wellington",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wellsford",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Westport",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Weston",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whakatane",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whakamaru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whananaki",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whangamata",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whangamomona",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whanganui",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whangarei",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whangarei Heads",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whangaruru",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whataroa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whatuwhiwhi",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whenuakite",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whenuakura",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whiritoa",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whitford",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whitby",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Whitianga",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Willowby",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wimbledon",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Winchester",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Windsor",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Windwhistle",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Winscombe",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Winton",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Woodend",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Woodend Beach",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Woodhill",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Woodville",
+                "synonyms": []
+              }
+            },
+            {
+              "name": {
+                "value": "Wyndham",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "NZ_CITY"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SetLocationIntent",
+          "confirmationRequired": false,
+          "slots": [
+            {
+              "name": "PostCode",
+              "type": "AMAZON.FOUR_DIGIT_NUMBER",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation":
+                  "Elicit.Intent-SetLocationIntent.IntentSlot-PostCode"
+              }
+            },
+            {
+              "name": "City",
+              "type": "NZ_CITY",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-SetLocationIntent.IntentSlot-City"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Intent-SetLocationIntent.IntentSlot-PostCode",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What's your post code?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Intent-SetLocationIntent.IntentSlot-City",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What's your city?"
+          }
+        ]
+      }
+    ]
+  }
+}

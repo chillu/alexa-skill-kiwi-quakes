@@ -1,9 +1,9 @@
-service: alexa-skill-kiwiquakes-new
+service: alexa-kiwiquakes
 
 provider:
   name: aws
   runtime: nodejs6.10
-  stage: prod
+  stage: ${opt:stage, self:custom.defaultStage}
   region: us-east-1
   memorySize: 256
   cfLogs: true
@@ -18,9 +18,14 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:us-east-1:*:table/usersTable"
+      Resource: "arn:aws:dynamodb:us-east-1:*:table/usersTable-${opt:stage, self:custom.defaultStage}"
   environment:
-    GOOGLE_API_KEY: ${file(config.json):GOOGLE_API_KEY}
+    GOOGLE_API_KEY: ${file(config.${opt:stage, self:custom.defaultStage}.json):GOOGLE_API_KEY}
+    APP_ID: ${file(config.${opt:stage, self:custom.defaultStage}.json):APP_ID}
+    STAGE: ${opt:stage, self:custom.defaultStage}
+
+custom:
+  defaultStage: dev
 
 functions:
   skill: # function name
@@ -34,7 +39,7 @@ resources:
     usersTable:
       Type: AWS::DynamoDB::Table
       Properties:
-        TableName: usersTable
+        TableName: usersTable-${opt:stage, self:custom.defaultStage}
         AttributeDefinitions:
           - AttributeName: userId
             AttributeType: S

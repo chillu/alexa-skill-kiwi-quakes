@@ -31,16 +31,22 @@ npm install
 
 Now copy `config.default.json` to `config.json` and set your
 [Google API key](https://developers.google.com/maps/documentation/geocoding/get-api-key)
-(required for geocoding lookups);
+(required for geocoding lookups).
 
 ## Usage
 
-Full deploy (AWS skills, models and lambda function).
-Adjust the skill id and AWS profile accordingly in `package.json`.
+First, create two skills in Alexa: `dev` and `prod`.
+Then, adjust the skill ids and AWS profiles accordingly in `package.json`.
+More details can be found in the [Alexa Starter Template](https://github.com/rmtuckerphx/alexa-skill-serverless-starter-template)
 
-* `npm run update-skill`: Deploys skill
-* `npm run update-model`: Deploys model
-* `npm run deploy`: Deploys lambda function
+* `npm run deploy:dev`: Deploys skill, model and function (dev stage)
+* `npm run deploy:dev:sls`: Deploys function (dev stage)
+* `npm run deploy:dev:skill`: Deploys skill (dev stage)
+* `npm run deploy:dev:model`: Deploys model (dev stage)
+* `npm run deploy:prod`: Deploys skill, model and function (prod stage)
+* `npm run deploy:prod:sls`: Deploys function (prod stage)
+* `npm run deploy:prod:skill`: Deploys skill (prod stage)
+* `npm run deploy:prod:model`: Deploys model (prod stage)
 
 ## Testing
 

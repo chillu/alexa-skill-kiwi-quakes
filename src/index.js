@@ -5,9 +5,14 @@ const getQuakes = require("./lib/geonet").getQuakes;
 const selectQuake = require("./lib/select-quake");
 const geocode = require("./lib/geocode");
 
+const stage = process.env.STAGE;
+const appId = process.env.APP_ID;
+const googleApiKey = process.env.GOOGLE_API_KEY;
+
 exports.handler = function(event, context) {
   const alexa = Alexa.handler(event, context);
-  alexa.dynamoDBTableName = "usersTable";
+  alexa.appId = appId;
+  alexa.dynamoDBTableName = `usersTable-${stage}`;
   alexa.registerHandlers(handlers);
   alexa.execute();
 };
@@ -52,7 +57,7 @@ const handlers = {
     }
 
     geocode(slots.PostCode.value, slots.City.value, {
-      apiKey: process.env.GOOGLE_API_KEY
+      apiKey: googleApiKey
     })
       .then(result => {
         console.log("result", result);
