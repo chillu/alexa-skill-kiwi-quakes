@@ -60,7 +60,11 @@ const handlers = {
         this.attributes.latLng = { latitude, longitude };
 
         // TODO Allow confirming slot value
-        this.response.speak(`Setting your location to ${formattedAddress}`);
+        this.response.speak(
+          `<speak><say-as interpret-as="address">` +
+            `Setting your location to ${formattedAddress}` +
+            `</say-as></speak>`
+        );
         this.emit(":responseReady");
       })
       .catch(e => {
