@@ -48,6 +48,9 @@ More details can be found in the [Alexa Starter Template](https://github.com/rmt
 * `npm run deploy:prod:skill`: Deploys skill (prod stage)
 * `npm run deploy:prod:model`: Deploys model (prod stage)
 
+Note that utterances in `models/` should be regenerated
+manually via `util/generate-utterances.js` at the moment.
+
 ## Testing
 
 Uses [Mocha](http://http://mochajs.org/).
