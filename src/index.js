@@ -59,6 +59,11 @@ const handlers = {
           .then(data => {
             console.log("data", data);
 
+            // Only geocode with viable data
+            if (!data.postalCode) {
+              resolve(null);
+            }
+
             // Don't try to resolve overseas addresses
             if (data.countryCode !== "NZ") {
               resolve(null);
