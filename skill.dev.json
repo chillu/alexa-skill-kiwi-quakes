@@ -25,7 +25,7 @@
           "examplePhrases": [
             "Alexa ask kiwi quakes if that was an earthquake",
             "Alexa ask kiwi quakes if there were any quakes in the last six hours",
-            "Alexa tell kiwi quakes to set my location"
+            "Alexa tell kiwi quakes to check if there was an earthquake in the last five minutes"
           ],
           "keywords": [
             "earthquake",
@@ -36,12 +36,12 @@
           ],
           "name": "dev kiwi quakes",
           "description":
-            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
+            "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your neighbourhood-level location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
         }
       },
       "isAvailableWorldwide": true,
       "testingInstructions":
-        "Should come up with the latest quake (magnitude 3 or higher) from http://www.geonet.org.nz/earthquake/light. The underlying data (https://api.geonet.org.nz/) is in the public domain, and used according to the data policy outlined at http://www.geonet.org.nz/policy.\n\nUsers can optionally set their location through city and post code. This is based on a custom list of New Zealand cities. Try PostCode=6023 and City=Wellington. \n\nThis approach for location setting is used for two reasons:\n1. Alexa hasn't launched in the main target market yet (New Zealand), and hence the skill can't ask for the location through the profile. Once Alexa has launched there, I'll default to the profile data (requesting permission through the skill)\n2. If used outside of New Zealand, the Alexa profile address will be different from the one used for this New Zealand centric information. For example, my parents living in Germany checking for earthquakes where I live (Wellington, New Zealand). This is also the reason I'm asking for this skill to be available in all countries.",
+        "Should come up with the latest quake (magnitude 3 or higher) from http://www.geonet.org.nz/earthquake/light. The underlying data (https://api.geonet.org.nz/) is in the public domain, and used according to the data policy outlined at http://www.geonet.org.nz/policy.\n\nThe app (optionally) uses relative location metrics (e.g. \"quake 53km away\"). The API is only monitoring New Zealand quakes, but since it can be used without a device location in New Zealand I'm offering it as a global skill. Try setting your address to city=Wellington and postcode=6011. If you need a street address, add '59 Clyde Street'",
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     },
