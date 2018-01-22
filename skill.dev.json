@@ -16,7 +16,7 @@
             "new",
             "zealand"
           ],
-          "name": "dev kiwi quakes",
+          "name": "draft kiwi quakes",
           "description":
             "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
         },
@@ -34,7 +34,7 @@
             "new",
             "zealand"
           ],
-          "name": "dev kiwi quakes",
+          "name": "draft kiwi quakes",
           "description":
             "New Zealanders often ask themselves: Was that an earthquake, a truck going past, or just the wind? Now you can ask Alexa! The skill lists strongest or most recent quakes, and can optionally use your neighbourhood-level location to tell you how far away they happened.\n\nData provided by geonet.org.nz"
         }
