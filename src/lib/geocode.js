@@ -27,12 +27,6 @@ module.exports = function({ zipcode, apiKey }) {
         return null;
       }
 
-      // See https://developers.google.com/maps/documentation/geocoding/intro#Results
-      if (!result.city && !result.neighborhood) {
-        Promise.reject("No city-level match found");
-        return null;
-      }
-
       return ({ latitude, longitude, formattedAddress } = result);
     });
 };
