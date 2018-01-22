@@ -86,7 +86,7 @@ const handlers = {
     // Resolve concurrently
     Promise.all([getQuakesPromise, getLocationPromise]).then(
       ([quakes, latLng]) => {
-        // Store user data
+        // Store user data (or remove an existing one)
         this.attributes.latLng = latLng;
 
         // Find the most appropriate quake
@@ -108,6 +108,7 @@ const handlers = {
   "AMAZON.HelpIntent": function() {
     this.response.speak(
       "You can try: 'alexa, ask kiwi quakes if this was an earthquake'. " +
+        "We'll only report noticeable quakes, based on data from Geonet. " +
         "If you give the skill permission to use your zip code, " +
         "we'll tell you how far away the quakes were."
     );
