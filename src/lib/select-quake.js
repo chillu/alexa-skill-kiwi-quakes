@@ -106,7 +106,7 @@ module.exports = function(quakes, { since = "PT6H", currDate, latLng }) {
   }
 
   var msg;
-  if (matchingQuakes.length > 1) {
+  if (closeQuakes.length > 1) {
     msg =
       `There have been ${
         closeQuakes.length
