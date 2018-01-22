@@ -7,7 +7,7 @@
           "examplePhrases": [
             "Alexa ask kiwi quakes if that was an earthquake",
             "Alexa ask kiwi quakes if there were any quakes in the last six hours",
-            "Alexa tell kiwi quakes to set my location"
+            "Alexa tell kiwi quakes to check if there was an earthquake in the last five minutes"
           ],
           "keywords": [
             "earthquake",

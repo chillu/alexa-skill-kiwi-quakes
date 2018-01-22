@@ -29,58 +29,70 @@ const handlers = {
     this.emit(":responseReady");
   },
   FindQuakeIntent: function() {
-    const { latLng } = this.attributes;
     const { slots } = this.event.request.intent;
     const since = slots.Duration.value ? slots.Duration.value : defaults.since;
-    getQuakes().then(quakes => {
-      selectQuake(quakes, { since, latLng }).then(res => {
-        const msg = res.message;
-        this.response.speak(msg);
-        this.emit(":responseReady");
-      });
+
+    const getLocationPromise = new Promise((resolve, reject) => {
+      const { latLng } = this.attributes;
+      const sysContext = this.event.context.System;
+      console.log("this.attributes", this.attributes);
+      console.log("sysContext", sysContext);
+
+      if (latLng) {
+        // Use cached address for performance
+        // TODO Cache expiry
+        resolve(latLng);
+      } else if (!sysContext.user.permissions) {
+        // User hasn't provided permissions
+        console.log("null");
+        resolve(null);
+      } else {
+        // Get device location and resolve to coordinates
+        const das = new Alexa.services.DeviceAddressService();
+        das
+          .getCountryAndPostalCode(
+            sysContext.device.deviceId,
+            sysContext.apiEndpoint,
+            sysContext.user.permissions.consentToken
+          )
+          .then(data => {
+            console.log("data", data);
+
+            // Don't try to resolve overseas addresses
+            if (data.countryCode !== "NZ") {
+              resolve(null);
+            }
+
+            geocode({ zipcode: data.postalCode, apiKey: googleApiKey }).then(
+              result => {
+                console.log("result", result);
+                const { latitude, longitude } = result;
+                resolve({ latitude, longitude });
+              }
+            );
+          })
+          .catch(error => {
+            reject(error);
+          });
+      }
     });
-  },
-  SetLocationIntent: function() {
-    const { userId } = this.event.session.user;
-    const { slots } = this.event.request.intent;
 
-    if (!slots.PostCode.value) {
-      const speechOutput = "What's your postcode?";
-      const repromptSpeech = speechOutput;
-      return this.emit(":elicitSlot", "PostCode", speechOutput, repromptSpeech);
-    }
+    const getQuakesPromise = getQuakes();
 
-    if (!slots.City.value) {
-      const speechOutput = "What's your city?";
-      const repromptSpeech = speechOutput;
-      return this.emit(":elicitSlot", "City", speechOutput, repromptSpeech);
-    }
+    // Resolve concurrently
+    Promise.all([getQuakesPromise, getLocationPromise]).then(
+      ([quakes, latLng]) => {
+        // Store user data
+        this.attributes.latLng = latLng;
 
-    geocode(slots.PostCode.value, slots.City.value, {
-      apiKey: googleApiKey
-    })
-      .then(result => {
-        console.log("result", result);
-        const { latitude, longitude, formattedAddress } = result;
-        this.attributes.latLng = { latitude, longitude };
-
-        // TODO Allow confirming slot value
-        this.response.speak(
-          `<say-as interpret-as="address">` +
-            `Setting your location to ${formattedAddress}` +
-            `</say-as>`
-        );
-        this.emit(":responseReady");
-      })
-      .catch(e => {
-        console.log("err", e);
-        // TODO Handle generic error (e.g. API limits)
-        var updatedIntent = this.event.request.intent;
-        updatedIntent.slots.City.value = null;
-        updatedIntent.slots.PostCode.value = null;
-        this.emit(":tell", "Sorry, I couldn't find a location");
-        this.emit(":delegate", updatedIntent);
-      });
+        // Find the most appropriate quake
+        selectQuake(quakes, { since, latLng }).then(res => {
+          const msg = res.message;
+          this.response.speak(msg);
+          this.emit(":responseReady");
+        });
+      }
+    );
   },
   SessionEndedRequest: function() {
     console.log("Session ended with reason: " + this.event.request.reason);

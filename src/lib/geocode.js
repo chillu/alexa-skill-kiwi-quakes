@@ -1,20 +1,21 @@
 const NodeGeocoder = require("node-geocoder");
 
 /**
- * @param {String}
- * @param {String}
  * @param {Object} options
  * @return {Promise}
  */
-module.exports = function(postCode, city, { apiKey }) {
+module.exports = function({ zipcode, apiKey }) {
   var geocoder = NodeGeocoder({
     provider: "google",
     apiKey: apiKey,
     excludePartialMatches: true
   });
 
+  // Geocoder is weird when not supplying address and using "zipcode"
+  // as a qualifying (returns 400, or occasionally returns no results
+  // with address=<zipcode> and zipcode=<zipcode>)
   return geocoder
-    .geocode({ address: city, zipcode: postCode, country: "New Zealand" })
+    .geocode({ address: zipcode, country: "New Zealand" })
     .then(results => {
       console.log("results", results);
       // TODO Handle rate limits
@@ -23,11 +24,13 @@ module.exports = function(postCode, city, { apiKey }) {
 
       if (!result) {
         Promise.reject("No matches found");
+        return null;
       }
 
       // See https://developers.google.com/maps/documentation/geocoding/intro#Results
       if (!result.city && !result.neighborhood) {
         Promise.reject("No city-level match found");
+        return null;
       }
 
       return ({ latitude, longitude, formattedAddress } = result);
