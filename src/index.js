@@ -36,16 +36,15 @@ const handlers = {
     const getLocationPromise = new Promise((resolve, reject) => {
       const { latLng } = this.attributes;
       const sysContext = this.event.context.System;
-      console.log("this.attributes", this.attributes);
-      console.log("sysContext", sysContext);
 
       if (latLng) {
         // Use cached address for performance
         // TODO Cache expiry
+        console.log("using cached latLng", latLng);
         resolve(latLng);
       } else if (!sysContext.user.permissions) {
         // User hasn't provided permissions
-        console.log("null");
+        console.log("permission not granted");
         resolve(null);
       } else {
         // Get device location and resolve to coordinates
@@ -57,7 +56,7 @@ const handlers = {
             sysContext.user.permissions.consentToken
           )
           .then(data => {
-            console.log("data", data);
+            console.log("device data", data);
 
             // Only geocode with viable data
             if (!data.postalCode) {
@@ -71,7 +70,6 @@ const handlers = {
 
             geocode({ zipcode: data.postalCode, apiKey: googleApiKey }).then(
               result => {
-                console.log("result", result);
                 const { latitude, longitude } = result;
                 resolve({ latitude, longitude });
               }
@@ -110,7 +108,8 @@ const handlers = {
   "AMAZON.HelpIntent": function() {
     this.response.speak(
       "You can try: 'alexa, ask kiwi quakes if this was an earthquake'. " +
-        "For more accurate information, say 'alexa, tell kiwi quakes to set my location to post code'"
+        "If you give the skill permission to use your zip code, " +
+        "we'll tell you how far away the quakes were."
     );
     this.emit(":responseReady");
   },

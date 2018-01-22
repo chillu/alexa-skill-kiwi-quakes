@@ -17,7 +17,7 @@ module.exports = function({ zipcode, apiKey }) {
   return geocoder
     .geocode({ address: zipcode, country: "New Zealand" })
     .then(results => {
-      console.log("results", results);
+      console.log("geocode.js results", results);
       // TODO Handle rate limits
 
       const result = results ? results[0] : null;
