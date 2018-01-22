@@ -4,6 +4,7 @@ const Alexa = require("alexa-sdk");
 const getQuakes = require("./lib/geonet").getQuakes;
 const selectQuake = require("./lib/select-quake");
 const geocode = require("./lib/geocode");
+require("source-map-support").install();
 
 const stage = process.env.STAGE;
 const appId = process.env.APP_ID;
