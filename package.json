@@ -29,7 +29,7 @@
     "date-fns": "^1.29.0",
     "duration-iso-8601": "^1.1.0",
     "haversine-js": "^1.0.0",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "alexa-utterances": "^0.2.1",
